@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Label, TextInput, Button, Alert, Spinner } from 'flowbite-react'
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import OAuth from '../components/OAuth'
 
 const SignIn = () => {
   const [formData, setFormData] = useState("");
@@ -73,6 +74,7 @@ dispatch(signInFailure(error.message));
             <Button gradientDuoTone='purpleToPink' className='w-full' type='submit' disabled={loading} >{
               loading ? (<Spinner size='sm'><span className='pl-3'>Loading...</span></Spinner>) : 'Sign Ip'
               }</Button>
+              <OAuth />
           </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span>
